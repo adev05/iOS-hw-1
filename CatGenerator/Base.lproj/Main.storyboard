@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xfi-o2-eef">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Cat Generate View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="CatGenerateViewController" customModule="CatGenerator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Генератор котов" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tOr-P8-LyA">
+                                <rect key="frame" x="20" y="123" width="353" height="23"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="catImage" translatesAutoresizingMaskIntoConstraints="NO" id="LEN-Tz-eP5">
+                                <rect key="frame" x="20" y="166" width="353" height="353"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="LEN-Tz-eP5" secondAttribute="height" multiplier="1:1" id="bhf-XT-iaf"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4a-8v-rjh">
+                                <rect key="frame" x="20" y="539" width="353" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Сгенерируй кота"/>
+                                <connections>
+                                    <action selector="didTapCatGenerateButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uXa-cx-Nwg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tOr-P8-LyA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="1Wd-Rt-H3u"/>
+                            <constraint firstItem="R4a-8v-rjh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="3gf-TI-7yp"/>
+                            <constraint firstItem="LEN-Tz-eP5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="7KK-Ed-Eaf"/>
+                            <constraint firstItem="tOr-P8-LyA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="9Nc-3t-Swa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tOr-P8-LyA" secondAttribute="trailing" constant="20" id="HGn-1W-O6V"/>
+                            <constraint firstItem="LEN-Tz-eP5" firstAttribute="top" secondItem="tOr-P8-LyA" secondAttribute="bottom" constant="20" id="Vfj-D6-P4n"/>
+                            <constraint firstItem="R4a-8v-rjh" firstAttribute="top" secondItem="LEN-Tz-eP5" secondAttribute="bottom" constant="20" id="g5i-Zd-2Qv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LEN-Tz-eP5" secondAttribute="trailing" constant="20" id="hhu-0m-f1h"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="R4a-8v-rjh" secondAttribute="trailing" constant="20" id="nbE-yF-6c8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="bDr-D3-4vU"/>
+                    <connections>
+                        <outlet property="catImageView" destination="LEN-Tz-eP5" id="VJL-yk-y4X"/>
+                        <outlet property="textLabel" destination="tOr-P8-LyA" id="ho6-Q5-9MS"/>
+                        <segue destination="u4h-st-jLR" kind="show" identifier="showCatImageSegue" id="6Yx-ME-ZUH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1884.7328244274809" y="-2.1126760563380285"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="Yui-F5-EYn">
+            <objects>
+                <viewController id="u4h-st-jLR" customClass="SecondViewController" customModule="CatGenerator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yDp-zl-0C6">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4KQ-oN-N0R">
+                                <rect key="frame" x="20" y="123" width="353" height="353"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="4KQ-oN-N0R" secondAttribute="height" multiplier="1:1" id="beA-Az-G9o"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="yjy-LM-aqz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yjy-LM-aqz" firstAttribute="trailing" secondItem="4KQ-oN-N0R" secondAttribute="trailing" constant="20" id="rrs-hk-nO6"/>
+                            <constraint firstItem="4KQ-oN-N0R" firstAttribute="leading" secondItem="yjy-LM-aqz" secondAttribute="leading" constant="20" id="xgz-dd-9yA"/>
+                            <constraint firstItem="4KQ-oN-N0R" firstAttribute="top" secondItem="yjy-LM-aqz" secondAttribute="top" constant="20" id="ysx-1h-41n"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Z3w-FV-v6d"/>
+                    <connections>
+                        <outlet property="catImageView" destination="4KQ-oN-N0R" id="oic-Qp-Ytc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JlA-gU-DRL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2851.1450381679388" y="-2.1126760563380285"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="6cI-Rb-vBn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HSY-nQ-Qss" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="1QI-la-Pzf"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wz8-Ge-50D">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="NHW-dX-HLh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="079-jp-d9C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="958.01526717557249" y="-2.1126760563380285"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="UWi-UN-GQ1">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Xfi-o2-eef" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SbT-M8-Vsh">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="HSY-nQ-Qss" kind="relationship" relationship="viewControllers" id="Xpy-qq-h1T"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4z9-BX-W3j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="31.297709923664122" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="catImage" width="262" height="192"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
